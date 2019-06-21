@@ -39,9 +39,8 @@ client.on("message", message => {
         if (err) console.error(err);
     });
 });
-
+var prefix = prefixes[message.guild.id].prefix;
 client.on('ready', () => {
-   var prefix = prefixes[message.guild.id].prefix;
   client.user.setGame (`${prefix}help | By: Zeldox55`,'https://www.twitch.tv/peery13');
 
  
@@ -105,7 +104,7 @@ var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
 });
 
-
+var prefix = prefixes[message.guild.id].prefix;
   const devs = ['411613098923786241'];
 client.on('message', message => {
  var prefix = prefixes[message.guild.id].prefix;
