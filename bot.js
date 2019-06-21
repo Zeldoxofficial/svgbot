@@ -100,8 +100,9 @@ client.on('guildMemberAdd', member => {
 
 
 
-var prefix = prefixes[message.guild.id].prefix;
+
 client.on('guildMemberAdd', member => {
+    var prefix = prefixes[message.guild.id].prefix;
     var embed = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
   .addField("***شكرا الانضمامك الينا***" ,member.user.username )
