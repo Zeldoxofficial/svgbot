@@ -104,7 +104,6 @@ client.on('guildMemberAdd', member => {
     .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
-channel.send({embed : embed
 });
 
 client.on('message', message => {
