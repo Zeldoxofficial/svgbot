@@ -12,13 +12,7 @@ client.on('ready', () => {
 
   client.user.setGame (`${prefix}help | By: Zeldox55`,'https://www.twitch.tv/peery13');
 
-  console.log('---------------');
-
-  console.log(' Bot Is Online')
-
-  console.log('---------------')
  
- console.log('by zeldox55')
 
 });
 
