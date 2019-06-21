@@ -9,7 +9,6 @@ const token = 'BOT_TOKEN';
 const antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
 const antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
 let antibots = JSON.parse(fs.readFileSync('./antibots.json' , 'utf8'));
-const log = JSON.parse(fs.readFileSync('./log.json' , 'utf8'));
 
 
 
@@ -78,7 +77,7 @@ client.on('message', message => {
     if (!message.channel.guild) return;
     if (message.author.bot) return;
         if (!prefixes[message.guild.id]) prefixes[message.guild.id] = {
-        prefix: '!',
+        prefix: '+',
     };
     var prefix = prefixes[message.guild.id].prefix;
     if (message.content.startsWith(prefix + `ping`)) {
