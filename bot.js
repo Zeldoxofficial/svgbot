@@ -8,13 +8,6 @@ const token = 'BOT_TOKEN';
 const antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
 const antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
 let antibots = JSON.parse(fs.readFileSync('./antibots.json' , 'utf8'));
-client.on('ready', () => {
-
-  client.user.setGame (`${prefix}help | By: Zeldox55`,'https://www.twitch.tv/peery13');
-
- 
-
-});
 
 
 // Database
@@ -47,7 +40,13 @@ client.on("message", message => {
     });
 });
 
+client.on('ready', () => {
+   var prefix = prefixes[message.guild.id].prefix;
+  client.user.setGame (`${prefix}help | By: Zeldox55`,'https://www.twitch.tv/peery13');
 
+ 
+
+});
 
 
 
