@@ -22,9 +22,7 @@ client.on('ready', () => {
 
 });
 
-const client = new Discord.Client();
-// Package's
-const fs = require("fs"); // fs Package //
+
 // Database
 let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
 // سوي ملف وسميه prefix.json
