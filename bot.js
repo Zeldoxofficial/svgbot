@@ -33,7 +33,27 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json' , 'utf8'));
 
 
 
+const invites = {};
+const wait = require('util').promisify(setTimeout);
+client.on('ready', () => {
+  wait(1000);
+  client.guilds.forEach(king => {
+    king.fetchInvites().then(guildInvites => {
+      invites[king.id] = guildInvites;
+    });
+  });
+});
 
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const gamer = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => gamer.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const welcome = member.guild.channels.find(channel => channel.name === "welcome");
+    welcome.send(` ||${member.user.tag}|| تمت دعوتك بواسطة ||${inviter.tag}|| invites =  ||${invite.uses}|| `)
+  });
+});
 
 let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
 // سوي ملف وسميه prefix.json
