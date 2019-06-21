@@ -107,8 +107,8 @@ if (!channel) return;
 
 
   const devs = ['411613098923786241'];
-  var prefix = prefixes[message.guild.id].prefix;
 client.on('message', message => {
+ var prefix = prefixes[message.guild.id].prefix;
     let argresult = message.content.split(` `).slice(1).join(' ');
     if (message.content.startsWith(prefix + 'setStreaming')) {
       if (!devs.includes(message.author.id)) return message.channel.send("<@429972030092476437> only this guy can do restart the bot so don't try again 😉.");
