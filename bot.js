@@ -95,7 +95,6 @@ client.on('guildMemberAdd', member => {
 
 
 client.on('guildMemberAdd', member => {
-    var prefix = prefixes[message.guild.id].prefix;
     var embed = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
   .addField("***شكرا الانضمامك الينا***" ,member.user.username )
@@ -108,7 +107,7 @@ if (!channel) return;
 
 
   const devs = ['411613098923786241'];
-
+  var prefix = prefixes[message.guild.id].prefix;
 client.on('message', message => {
     let argresult = message.content.split(` `).slice(1).join(' ');
     if (message.content.startsWith(prefix + 'setStreaming')) {
