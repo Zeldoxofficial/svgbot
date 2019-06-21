@@ -5,6 +5,7 @@ const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
 const Canvas = require("canvas"); 
 const token = 'BOT_TOKEN';
+vconst prefix = prefixes[message.guild.id].prefix;
 const antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
 const antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
 let antibots = JSON.parse(fs.readFileSync('./antibots.json' , 'utf8'));
@@ -39,7 +40,7 @@ client.on("message", message => {
         if (err) console.error(err);
     });
 });
-var prefix = prefixes[message.guild.id].prefix;
+
 client.on('ready', () => {
   client.user.setGame (`${prefix}help | By: Zeldox55`,'https://www.twitch.tv/peery13');
 
@@ -104,7 +105,7 @@ var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
 });
 
-var prefix = prefixes[message.guild.id].prefix;
+
   const devs = ['411613098923786241'];
 client.on('message', message => {
  var prefix = prefixes[message.guild.id].prefix;
