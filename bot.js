@@ -126,16 +126,7 @@ client.on('guildMemberAdd', async function (Monster) {
   })
 });
 
-client.on('guildMemberAdd', member => {
-    var embed = new Discord.RichEmbed()
-    .setThumbnail(member.user.avatarURL)
-  .addField("***مرحبا بك***" ,member.user.username )
-    .setDescription('***اهلا بك في سيرفرنا \n نتمى ان تعيش معنا لحضاة جميلة \n و سنساعدك في اي وقت 😘***')
-    .setColor('RANDOM')
-    .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
-var channel =member.guild.channels.find('name', 'welcome')
-if (!channel) return;
-});
+
 
 
   const devs = ['411613098923786241'];
