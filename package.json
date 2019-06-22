@@ -21,7 +21,7 @@
     "figlet": "^1.2.1",
     "finalhandler": "^1.1.1",
     "fortnite": "^4.3.2",
-    "fs":"^0.0.1-security"
+    "fs":"^0.0.1-security",
     "get-youtube-id": "^1.0.1",
     "gif-search": "^2.0.1",
     "giphy-api": "^2.0.1",
