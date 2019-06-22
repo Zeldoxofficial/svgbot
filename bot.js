@@ -3,6 +3,7 @@ const moment = require("moment");
 const fs = require("fs");      
 const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
+var cavas = require("canvas");
 const Canvas = Canvas.createCanvas({options});
 const token = 'BOT_TOKEN';
 const prefix = '+';
