@@ -4,7 +4,6 @@ const fs = require("fs");
 const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
 const Canvas = Canvas.createCanvas({options});
-const Canvas = require("canvas"); 
 const token = 'BOT_TOKEN';
 const prefix = '+';
 const antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
