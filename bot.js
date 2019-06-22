@@ -394,7 +394,7 @@ fs.writeFile("./welcome.json", JSON.stringify(welcome), (err) => {
 const yourID = "411613098923786241"; 
 const setupCMD = `${prefix}activterole`
 let initialMessage = ``;
-const roles = ["√ SVG | MemberS • "];
+const roles = ["MemberS"];
 const reactions = ['✅'];
  
 
@@ -404,7 +404,7 @@ if (roles.length !== reactions.length) throw "Roles list and reactions list are 
 function generateMessages(){
     var messages = [];
     messages.push(initialMessage);
-     for (let role of roles) messages.push(` لتتبيت هويتك اضغط على الاموجي ✅ ورح تاخد رتبة **"${role}"** role!`); 
+     for (let role of roles) messages.push(`**لتاخد هده الرتبة**\n**"${role}"**\n**ولكي تتبت نفسك اضغط على ✅**\n**@everyone | @here**`); 
     return messages;
 }
  
