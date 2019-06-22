@@ -394,7 +394,7 @@ fs.writeFile("./welcome.json", JSON.stringify(welcome), (err) => {
 const yourID = "411613098923786241"; 
 const setupCMD = `${prefix}activterole`
 let initialMessage = ``;
-const roles = ["√ SVG | Members •"];
+const roles = ["√ SVG | MemberS • "];
 const reactions = ['✅'];
  
 
