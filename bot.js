@@ -45,32 +45,39 @@ client.on('ready', () => {
 
 
 
-const invites = {};
+
+
+  const invites = {};
+ 
 const wait = require('util').promisify(setTimeout);
+ 
 client.on('ready', () => {
   wait(1000);
-  client.guilds.forEach(king => {
-    king.fetchInvites().then(guildInvites => {
-      invites[king.id] = guildInvites;
+ 
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
     });
   });
 });
-
+ 
 client.on('guildMemberAdd', member => {
+                    if(!welcome[member.guild.id]) welcome[member.guild.id] = {
+                  by: 'Off'
+                }
+    if(welcome[member.guild.id].by === 'Off') return;
   member.guild.fetchInvites().then(guildInvites => {
-    const gamer = invites[member.guild.id];
+    const ei = invites[member.guild.id];
     invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => gamer.get(i.code).uses < i.uses);
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
-    const welcome = member.guild.channels.find(channel => channel.name === "welcome");
-    welcome.send(` ||${member.user.tag}|| تمت دعوتك بواسطة ||${inviter.tag}|| invites =  ||${invite.uses}|| `)
+    const logChannel = member.guild.channels.find(channel => channel.name === `${welcome[member.guild.id].channel}`);
+    if(!logChannel) return;
+      setTimeout(() => {
+    logChannel.send(`Invited By: <@${inviter.id}>`);
+  },2000)
   });
 });
-
-
-
-
-
 
 client.on('guildMemberAdd', member => {
     var embed = new Discord.RichEmbed()
