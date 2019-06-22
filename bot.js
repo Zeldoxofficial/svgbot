@@ -3,6 +3,7 @@ const moment = require("moment");
 const fs = require("fs");      
 const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
+const canvas = Canvas.createCanvas({options});
 const Canvas = require("canvas"); 
 const token = 'BOT_TOKEN';
 const prefix = '+';
@@ -10,6 +11,7 @@ const antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
 const antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
 let antibots = JSON.parse(fs.readFileSync('./antibots.json' , 'utf8'));
 const WelcomeChannel = JSON.parse(fs.readFileSync('./welcomer.json', "utf8")) 
+
 
 client.on('ready', () => {
 
