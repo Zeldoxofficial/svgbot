@@ -25,7 +25,7 @@ client.on('ready', () => {
 
 });
  
-const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
+const welcome = JSON.parse(fs.readFileSync('./welcome.json' , 'utf8'));
 client.on('message', async message => {
     let messageArray = message.content.split(" ");
    if(message.content.startsWith(prefix + "setLeave")) {
