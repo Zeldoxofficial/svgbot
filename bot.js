@@ -9,6 +9,7 @@ const prefix = '+';
 const antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
 const antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
 let antibots = JSON.parse(fs.readFileSync('./antibots.json' , 'utf8'));
+const WelcomeChannel = JSON.parse(fs.readFileSync('./welcomer.json', "utf8")) 
 
 client.on('ready', () => {
 
