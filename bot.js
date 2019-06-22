@@ -5,48 +5,26 @@ const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
 const Canvas = require("canvas"); 
 const token = 'BOT_TOKEN';
-const prefix = prefixes[message.guild.id].prefix;
+const prefix = '+';
 const antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
 const antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
 let antibots = JSON.parse(fs.readFileSync('./antibots.json' , 'utf8'));
 
-
-// Database
-let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
-// سوي ملف وسميه prefix.json
-// البرفكس الاساسي هو !
- 
-client.on("message", message => {
-    if (!message.channel.guild) return;
-    if (message.author.bot) return;
-    if (!prefixes[message.guild.id]) prefixes[message.guild.id] = {
-        prefix: '#',
-    };
-    var prefix = prefixes[message.guild.id].prefix;
-    var setp = prefixes[message.guild.id];
-    if (message.content.startsWith(prefix + 'setp')) {
-        if (!message.member.hasPermission(`MANAGE_GUILD`)) return message.reply(`**:x: Error: You do not have the required permissions: Manage Server.**`);
- 
-        let args = message.content.split(" ").slice(1);
- 
-        if (!args.join(" ")) return message.reply(`**:x: Error: Say The Prefix Please.**`);
- 
-        message.channel.send(`** Successfully set the new Prefix to  ${args.join(" ")} **`);
-        setp.prefix = args.join();
- 
-    }
- 
-    fs.writeFile("./Database/prefix.json", JSON.stringify(prefixes), (err) => {
-        if (err) console.error(err);
-    });
-});
-
 client.on('ready', () => {
-  client.user.setGame (`${prefix}help | By: Zeldox55`,'https://www.twitch.tv/peery13');
 
+  client.user.setGame (`${prefix}help | Dev Zeldox55`,'https://www.twitch.tv/peery13');
+
+  console.log('---------------');
+
+  console.log(' Bot Is Online')
+
+  console.log('---------------')
  
+ console.log('by zeldox55')
 
 });
+ 
+
 
 
 
